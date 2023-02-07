@@ -95,4 +95,6 @@ else :
     print("mixed")
 ```
 
+![image](https://user-images.githubusercontent.com/116260619/217266747-fca42919-3f88-44de-b51f-32e15f1f7d01.png)
+
 sorted함수를 사용해서 받아본 배열이 같은지 확인해서 쉽게 구할 수 있었다.
