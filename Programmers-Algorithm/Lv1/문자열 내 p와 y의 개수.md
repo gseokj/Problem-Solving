@@ -30,6 +30,10 @@
 
 ### 🔑 Solution 🔑
 
+string.lower() : 문자열을 소문자로
 
+string.upper() : 문자열을 대문자로
+
+string.count("문자열") : 문자열 내의 문자열 개수
 
 ![image](https://user-images.githubusercontent.com/116260619/218642479-1e0e4e5c-70c2-4381-8d89-46ff6ac46974.png)
