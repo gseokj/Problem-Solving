@@ -19,4 +19,6 @@
 
 ### 🔑 Solution 🔑
 
+조건인 x를 곱하여 list로 반환하였다!
+
 ![image](https://user-images.githubusercontent.com/116260619/218644394-cdd6b448-7db7-4002-846f-5f1df4525244.png)
