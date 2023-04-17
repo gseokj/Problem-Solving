@@ -7,29 +7,29 @@ for i in range(t):
     n = int(input())
     arr = input()[1:-1].split(',')
  
-    queue = deque(arr)
+    arr_d = deque(arr)
  
     flag = 0
  
     if n == 0:
-        queue = []
+        arr_d = []
  
     for j in p:
         if j == 'R':
             flag += 1
         elif j == 'D':
-            if len(queue) == 0:
+            if len(arr_d) == 0:
                 print("error")
                 break
             else:
                 if flag % 2 == 0:
-                    queue.popleft()
+                    arr_d.popleft()
                 else:
-                    queue.pop()
+                    arr_d.pop()
  
     else:
         if flag % 2 == 0:
-            print("[" + ",".join(queue) + "]")
+            print("[" + ",".join(arr_d) + "]")
         else:
-            queue.reverse()
-            print("[" + ",".join(queue) + "]")
+            arr_d.reverse()
+            print("[" + ",".join(arr_d) + "]")
