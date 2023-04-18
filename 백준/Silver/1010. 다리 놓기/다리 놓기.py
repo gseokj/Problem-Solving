@@ -8,5 +8,5 @@ def dp_b (n,m) :
     return dp[n][m]
 
 for _ in range(int(input())):
-    east, west =  map(int, input().split())
-    print(dp_b(east,west))
+    west, east =  map(int, input().split())
+    print(dp_b(west,east))
