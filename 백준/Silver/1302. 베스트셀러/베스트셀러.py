@@ -7,6 +7,5 @@ best_seller=[]
 for i in comm :
     if comm[0][1]==i[1] :
         best_seller.append(i[0])
-best_seller.sort()
 
-print(best_seller[0])
+print(min(best_seller))
