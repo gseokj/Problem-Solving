@@ -1,0 +1,1 @@
+for x in range(int(input())):n,a,b=map(int,input().split());print(f"#{x+1}",min(a,b),0 if a+b<n else a+b-n)
