@@ -1,0 +1,1 @@
+for x in range(int(input())):print(f"#{x+1}","Bob"if int(input())%2else"Alice")
