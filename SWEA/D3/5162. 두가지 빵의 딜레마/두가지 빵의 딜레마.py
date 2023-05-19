@@ -1,0 +1,1 @@
+for x in range(int(input())):a,b,c=map(int,input().split());print(f"#{x+1}",c//min(a,b))
