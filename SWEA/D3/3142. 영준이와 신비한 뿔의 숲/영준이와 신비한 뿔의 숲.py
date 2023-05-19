@@ -1,0 +1,1 @@
+for x in range(int(input())):a,b=map(int,input().split());print(f"#{x+1}",2*b-a,a-b)
