@@ -3,7 +3,7 @@ from collections import deque
 input = sys.stdin.readline
 dr=[0,-1,0,1]
 dc=[-1,0,1,0]
-def dfs(r,c) :
+def bfs(r,c) :
     q = deque()
     rgb =['R','G','B']
     cnt=0
@@ -31,10 +31,10 @@ r = int(input())
 c = r
 graph = [list(input()) for _ in range(r)]
 visited=[[False] * c for _ in range(r)]
-print(dfs(r,c),end=' ')
+print(bfs(r,c),end=' ')
 for i in range(r):
     for j in range(c):
         if graph[i][j] == "R":
             graph[i][j] = "G"
 visited=[[False] * c for _ in range(r)]
-print(dfs(r,c))
+print(bfs(r,c))
