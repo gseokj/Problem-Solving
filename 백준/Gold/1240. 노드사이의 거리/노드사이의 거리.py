@@ -1,31 +1,21 @@
-import sys
 from collections import deque
-input = sys.stdin.readline
-
-def bfs(start,find):
-    queue = deque()
-    queue.append((start,0))
-    visited = [False] * (n+1)
-    visited[start] = True
-    while queue:
-        v, d = queue.popleft()
-        
-        if v == find: 
+n, m = map(int, input().split())
+graph = [[0] * (n + 1) for _ in range(n + 1)]
+for _ in range(n - 1):
+    x, y, d = map(int, input().split())
+    graph[x][y] = d
+    graph[y][x] = d
+def bfs(start, end):
+    q = deque([[start, 0]])
+    check = [0] * (n + 1)
+    while q:
+        s, d = q.popleft()
+        if s == end:
             return d
-        
-        for i, l in graph[v]:
-            if not visited[i]:
-                visited[i] = True
-                queue.append((i,d+l)) 
-    
-n, m = map(int,input().split())
-graph = [[] for _ in range(n+1)]
-
-for _ in range(n-1):
-    n1, n2, l = map(int,input().split())
-    graph[n1].append((n2,l))
-    graph[n2].append((n1,l))
-
+        for i in range(1, n + 1):
+            if graph[s][i] != 0 and check[i] == 0:
+                check[i] = 1
+                q.append([i, d + graph[s][i]])
 for _ in range(m):
-    n1, n2 = map(int,input().split())
-    print(bfs(n1,n2))
+    s, e = map(int, input().split())
+    print(bfs(s, e))
