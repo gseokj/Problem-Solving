@@ -1,13 +1,13 @@
 import sys
 
-I = sys.stdin.readline
+input = sys.stdin.readline
 
-s = list(I().strip())
+s = list(input().strip())
 t = []
-n = int(I())
+n = int(input())
 
 for _ in range(n):
-    c, *a = I().split()
+    c, *a = input().split()
     if c == 'L' and s:
         t.append(s.pop())
     elif c == 'D' and t:
