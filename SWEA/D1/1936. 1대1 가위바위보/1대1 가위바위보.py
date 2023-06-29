@@ -1,1 +1,1 @@
-a,b=map(int,input().split());print("A"if(a,b)in[(1,3),(2,1),(3,2)]else"B")
+print("A"if input()in["3 2","2,1","1 3"]else"B")
