@@ -1,8 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.LinkedList;
+import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
@@ -15,7 +14,6 @@ public class Main {
 	static int[] dc = { 0, 1, 0, -1 };
 
 	public static void main(String[] args) throws Exception {
-		//System.setIn(new FileInputStream("src/input.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		N = Integer.parseInt(st.nextToken());
@@ -81,7 +79,7 @@ public class Main {
 	}
 
 	static void bfs(int r, int c, int g) {
-		Queue<int[]> que = new LinkedList<int[]>();
+		Queue<int[]> que = new ArrayDeque<int[]>();
 		que.offer(new int[] { r, c });
 		map_copy[r][c] = g;
 		while (!que.isEmpty()) {
@@ -102,7 +100,7 @@ public class Main {
 	}
 
 	static void bfs2(int r, int c, int g) {
-		Queue<int[]> que = new LinkedList<int[]>();
+		Queue<int[]> que = new ArrayDeque<int[]>();
 		que.offer(new int[] { r, c });
 		while (!que.isEmpty()) {
 			int[] cur = que.poll();
