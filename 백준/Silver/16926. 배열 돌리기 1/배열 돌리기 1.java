@@ -2,94 +2,71 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
 	static int N, M, R;
-	static int[][] map;
-	static int[][] copy;
-	static int[] dr = { -1, 0, 1, 0 };
-	static int[] dc = { 0, -1, 0, 1 };
-	static int v;
-	static int tempN, tempM;
-	static boolean[][] visited;
-	static StringBuilder sb;
+	static int[][] map, copy;
+	static int[] dr = { 0, 1, 0, -1};
+	static int[] dc = { 1, 0, -1, 0 };
 
 	public static void main(String[] args) throws IOException {
 		//System.setIn(new FileInputStream("src/input.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		sb = new StringBuilder();
+		StringBuilder sb = new StringBuilder();
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
 		R = Integer.parseInt(st.nextToken());
 		map = new int[N][M];
-		copy = new int[N][M];
-
 		for (int i = 0; i < N; i++) {
 			st = new StringTokenizer(br.readLine());
 			for (int j = 0; j < M; j++) {
-				map[i][j] = Integer.parseInt(st.nextToken());
+				int a = Integer.parseInt(st.nextToken());
+				map[i][j] = a;
 			}
 		}
-		
-		
-		
-		
-		for (int x = 0; x < R; x++) {
-			tempN = N - 1;
-			tempM = M - 1;
-			visited = new boolean[N][M];
-			for (int i = 0; i < N; i++) {
-				copy[i] = map[i].clone();
-				
-			}
+		int tempR = N;
+		int tempC = M;
+		for (int i = 0; i < Math.min(M, N) / 2; i++) {
+			rotate(i, tempR * 2 + tempC * 2 - 4);
+			tempR -= 2;
+			tempC -= 2;
 
-			while (tempN > 1 || tempM > 1) {
-				v = 0;
-				dfs(tempN, tempM);
-				tempN--;
-				tempM--;
-			}
 		}
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < M; j++) {
-
-				sb.append(map[i][j] + " ");
-
+				sb.append(map[i][j]+" ");
 			}
 			sb.append("\n");
 		}
 		System.out.println(sb.toString());
 	}
 
-	private static void dfs(int n, int m) {
-	    int nr = n + dr[v];
-	    int nc = m + dc[v];
-	    
-	    if (check(nr, nc)) {
-	        if (!visited[nr][nc]) {
-	            visited[nr][nc] = true;
-	            map[nr][nc] = copy[n][m];
-	            dfs(nr, nc);
-	        }
-	    } else {
-	        v++;
-	        v %= 4;
-	        nr = n + dr[v];
-	        nc = m + dc[v];
-	        
-	        if (check(nr, nc) && !visited[nr][nc]) {
-	            visited[nr][nc] = true;
-	            map[nr][nc] = copy[n][m];
-	            dfs(nr, nc);
-	        }
-	    }
-	}
-
-	private static boolean check(int r, int c) {
-	    return r >= N - tempN - 1 && c >= M - tempM - 1 && r <= tempN && c <= tempM;
-	}
-
+	private static void rotate(int start, int len) {
+		int cnt = R%len;
+			for (int i = 0; i < cnt; i++) {
+				int r = start;
+				int c = start;
+				int v = 0;
+				int temp = map[r][c]; 
+				while(v<4) {
+					int nr=r+dr[v];
+					int nc=c+dc[v];
+					if(nr==start && nc==start) break;
+					if(nr>=start && nc>=start && nr<N-start && nc<M-start) {
+						map[r][c] = map[nr][nc];
+						r = nr;
+						c = nc;
+					}else {
+						v++;
+					}
+				}
+				map[start+1][start] = temp;
+				
+			}
+			
+		}
 
 }
