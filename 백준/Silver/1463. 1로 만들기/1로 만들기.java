@@ -1,43 +1,24 @@
-import java.util.ArrayDeque;
-import java.util.Queue;
-import java.util.Scanner;
-
+import java.util.*;
 public class Main {
-	static int cnt;
+	static int[] dp;
+	static int N;
 	public static void main(String[] args) {
-		Scanner scann  = new Scanner(System.in);
-		int a = scann.nextInt();
-		System.out.println(bfs(a));
-//		dfs(a);
-	}
-
-//	private static void dfs(int a,int cnt) {
-//	}
-
-	private static int bfs(int a) {
-		Queue<int []> que = new ArrayDeque<>();
-		que.offer(new int [] {a,0});
-		while(!que.isEmpty()) {
-			int[] t = que.poll();
-			int b = t[0];
-			int bb = t[1];
-			if(b==1) {
-				return bb;
+		dp = new int[1000001];
+		dp[1] = 0;
+		dp[2] = 1;
+		dp[3] = 1;
+		Scanner scann = new Scanner(System.in);
+		N = scann.nextInt();
+		for (int i = 4; i < N + 1; i++) {
+			if (i % 3 == 0 && i % 2 == 0) {
+				int temp1 = Math.min(dp[i / 3], dp[i - 1]);
+				int temp2 = Math.min(dp[i / 2], dp[i - 1]);
+				dp[i] = Math.min(temp1, temp2)+1;
 			}
-			if(b%3==0) {
-				int temp = b/3;
-				que.offer(new int[] {temp,bb+1});
-			}
-			if(b%2==0) {
-				int temp = b/2;
-				que.offer(new int[] {temp,bb+1});
-			}
-			int temp = b-1;
-			que.offer(new int[] {temp,bb+1});
-			
+			else if (i % 3 == 0)dp[i] = Math.min(dp[i / 3], dp[i - 1]) + 1;
+			else if (i % 2 == 0)dp[i] = Math.min(dp[i / 2], dp[i - 1]) + 1;
+			else dp[i] = dp[i - 1] + 1;
 		}
-		return -1;
-		
+		System.out.println(dp[N]);
 	}
-
 }
