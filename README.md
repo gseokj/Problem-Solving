@@ -256,6 +256,7 @@
 |3109. 빵집|[링크](./%EB%B0%B1%EC%A4%80/Gold/3109.%E2%80%85%EB%B9%B5%EC%A7%91/README.md)|
 |3190. 뱀|[링크](./%EB%B0%B1%EC%A4%80/Gold/3190.%E2%80%85%EB%B1%80/%EB%B1%80.py)|
 |4179. 불！|[링크](./%EB%B0%B1%EC%A4%80/Gold/4179.%E2%80%85%EB%B6%88%EF%BC%81/README.md)|
+|5143. Seymour the Seal|[링크](./%EB%B0%B1%EC%A4%80/Gold/5143.%E2%80%85Seymour%E2%80%85the%E2%80%85Seal/Seymour%E2%80%85the%E2%80%85Seal.java)|
 |5427. 불|[링크](./%EB%B0%B1%EC%A4%80/Gold/5427.%E2%80%85%EB%B6%88/%EB%B6%88.java)|
 |5430. AC|[링크](./%EB%B0%B1%EC%A4%80/Gold/5430.%E2%80%85AC/README.md)|
 |6497. 전력난|[링크](./%EB%B0%B1%EC%A4%80/Gold/6497.%E2%80%85%EC%A0%84%EB%A0%A5%EB%82%9C/README.md)|
