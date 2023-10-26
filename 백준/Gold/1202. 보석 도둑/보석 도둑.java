@@ -16,9 +16,7 @@ import java.util.*;
 	
 			@Override
 			public int compareTo(Gem o) {
-				if (o.m == this.m)
-					return o.v - this.v;
-				else
+				
 					return this.m - o.m;
 			}
 	
@@ -34,7 +32,7 @@ import java.util.*;
 		static List<Integer> bag;
 	
 		public static void main(String[] args) throws Exception {
-			//System.setIn(new FileInputStream("src/input.txt"));
+		//	System.setIn(new FileInputStream("src/input.txt"));
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			StringTokenizer st = new StringTokenizer(br.readLine());
 			N = Integer.parseInt(st.nextToken());
@@ -56,9 +54,11 @@ import java.util.*;
 				bag.add(m);
 			}
 			Collections.sort(bag);
+//			System.out.println(gems);
 	        for (int i = 0, j = 0; i < K; i++) {
 	            while (j < N && gems.get(j).m <= bag.get(i)) {
 	                pq.offer(gems.get(j).v);
+//	                System.out.println(i+" "+pq);
 	                j++;
 	            }
 	            if (!pq.isEmpty()) {
