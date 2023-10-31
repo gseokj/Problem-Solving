@@ -303,6 +303,7 @@
 |5143. Seymour the Seal|[링크](./%EB%B0%B1%EC%A4%80/Gold/5143.%E2%80%85Seymour%E2%80%85the%E2%80%85Seal/Seymour%E2%80%85the%E2%80%85Seal.java)|
 |5427. 불|[링크](./%EB%B0%B1%EC%A4%80/Gold/5427.%E2%80%85%EB%B6%88/%EB%B6%88.java)|
 |5430. AC|[링크](./%EB%B0%B1%EC%A4%80/Gold/5430.%E2%80%85AC/AC.py)|
+|6213. Balanced Lineup|[링크](./%EB%B0%B1%EC%A4%80/Gold/6213.%E2%80%85Balanced%E2%80%85Lineup/Balanced%E2%80%85Lineup.java)|
 |6497. 전력난|[링크](./%EB%B0%B1%EC%A4%80/Gold/6497.%E2%80%85%EC%A0%84%EB%A0%A5%EB%82%9C/README.md)|
 |6987. 월드컵|[링크](./%EB%B0%B1%EC%A4%80/Gold/6987.%E2%80%85%EC%9B%94%EB%93%9C%EC%BB%B5/%EC%9B%94%EB%93%9C%EC%BB%B5.java)|
 |7569. 토마토|[링크](./%EB%B0%B1%EC%A4%80/Gold/7569.%E2%80%85%ED%86%A0%EB%A7%88%ED%86%A0/%ED%86%A0%EB%A7%88%ED%86%A0.java)|
